@@ -1,0 +1,8 @@
+D:\C#\Manage\appBudgetManager.Domain\bin\Debug\appBudgetManager.Domain.exe.config
+D:\C#\Manage\appBudgetManager.Domain\bin\Debug\appBudgetManager.Domain.exe
+D:\C#\Manage\appBudgetManager.Domain\bin\Debug\appBudgetManager.Domain.pdb
+D:\C#\Manage\appBudgetManager.Domain\obj\Debug\appBudgetManager.Domain.csproj.AssemblyReference.cache
+D:\C#\Manage\appBudgetManager.Domain\obj\Debug\appBudgetManager.Domain.csproj.SuggestedBindingRedirects.cache
+D:\C#\Manage\appBudgetManager.Domain\obj\Debug\appBudgetManager.Domain.csproj.CoreCompileInputs.cache
+D:\C#\Manage\appBudgetManager.Domain\obj\Debug\appBudgetManager.Domain.exe
+D:\C#\Manage\appBudgetManager.Domain\obj\Debug\appBudgetManager.Domain.pdb
