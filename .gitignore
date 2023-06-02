@@ -1,0 +1,33 @@
+# Archivos de compilación y ejecución
+*.exe
+*.dll
+*.pdb
+
+# Archivos de salida de compilación
+bin/
+obj/
+
+# Archivos de configuración de Visual Studio
+.vs/
+*.suo
+*.user
+*.userprefs
+*.vscode
+
+# Archivos generados automáticamente
+_ReSharper*/
+*.resharper*
+[Tt]est[Rr]esult*/
+[Bb]uild/
+
+# Archivos de NuGet
+packages/
+
+# Archivos de registro
+*.log
+
+# Otros archivos y directorios específicos
+*.bak
+*.cache
+*.bak
+Thumbs.db
