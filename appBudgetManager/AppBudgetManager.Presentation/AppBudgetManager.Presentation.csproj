@@ -119,5 +119,23 @@
   <ItemGroup>
     <None Include="Resources\Report.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expenses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\appBudgetManager.Domain\AppBudgetManager.Domain.csproj">
+      <Project>{202883c8-a46d-40e3-b41a-86325df5af17}</Project>
+      <Name>AppBudgetManager.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

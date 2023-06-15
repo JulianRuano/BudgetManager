@@ -10,3 +10,7 @@ D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetM
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.pdb
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiHome.resources
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiMain.resources
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\appBudgetManager.Domain.exe
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\appBudgetManager.Domain.pdb
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\appBudgetManager.Domain.exe.config
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.csproj.CopyComplete

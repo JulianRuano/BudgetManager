@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.btnReport = new System.Windows.Forms.PictureBox();
             this.btnCategories = new System.Windows.Forms.PictureBox();
             this.btnHome = new System.Windows.Forms.PictureBox();
@@ -45,13 +45,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlMain
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(246, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(856, 728);
-            this.panel1.TabIndex = 7;
+            this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Location = new System.Drawing.Point(246, 2);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(856, 728);
+            this.pnlMain.TabIndex = 7;
             // 
             // btnReport
             // 
@@ -128,7 +128,7 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // Form1
+            // GuiMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,11 +138,11 @@
             this.Controls.Add(this.btnCategories);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "Form1";
+            this.Name = "GuiMain";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCategories)).EndInit();
@@ -160,7 +160,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.PictureBox btnCategories;
         private System.Windows.Forms.PictureBox btnReport;

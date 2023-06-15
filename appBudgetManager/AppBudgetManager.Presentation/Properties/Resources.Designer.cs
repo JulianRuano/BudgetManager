@@ -73,6 +73,16 @@ namespace AppBudgetManager.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delete {
+            get {
+                object obj = ResourceManager.GetObject("Delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dolar {
             get {
                 object obj = ResourceManager.GetObject("dolar", resourceCulture);
@@ -86,6 +96,36 @@ namespace AppBudgetManager.Presentation.Properties {
         internal static System.Drawing.Bitmap Drink_coffee_jdqb {
             get {
                 object obj = ResourceManager.GetObject("Drink_coffee_jdqb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit {
+            get {
+                object obj = ResourceManager.GetObject("Edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Expenses {
+            get {
+                object obj = ResourceManager.GetObject("Expenses", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frame {
+            get {
+                object obj = ResourceManager.GetObject("Frame", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

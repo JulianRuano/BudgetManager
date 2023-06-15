@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace AppBudGetManager.Domain
 {
-    internal class ClsBudGet
+    public class ClsBudGet
     {
 
         private double fldBalance;
@@ -64,6 +64,7 @@ namespace AppBudGetManager.Domain
 
         public double GetBalance()
         {
+            fldBalance = fldTotalIncomes - fldTotalExpenses;
             return fldBalance;
         }
 
@@ -85,12 +86,14 @@ namespace AppBudGetManager.Domain
             if (prmType == "Incomes")
             {
                 fldMyIncomes.Add(objTransaction);
-                   return true;
+                fldTotalIncomes += prmQuantity;
+                return true;
             }
             else if (prmType == "Expenses")
             {
                 flbMyExpenses.Add(objTransaction);
-                   return true;
+                fldTotalExpenses += prmQuantity;
+                return true;
             }
             return false;
         }
@@ -119,10 +122,6 @@ namespace AppBudGetManager.Domain
             return false;
         }
 
-        public double GenerateBalance()
-        {
-            return fldBalance = fldTotalIncomes - fldTotalExpenses;
-        }
 
         public List<ClsTransaction> GenerateReport(DateTime prmStartDate, DateTime prmEndingDate)
         {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 
-namespace AppBudGetManager.Domain
+namespace AppBudGetManager.Domain.System
 {
-    internal class ClsSystem
+    public class ClsSystem
     {
-        public ClsBudGet fldMyBudGet = null;
+        public ClsBudGet fldMyBudGet;
         public List<ClsCategory> fldMyCategory = new List<ClsCategory>();
 
         public bool CreateBudGet()
@@ -69,7 +69,13 @@ namespace AppBudGetManager.Domain
 
         }
 
-
+        /// <summary>
+        /// add a new category to the list  of categories 
+        /// </summary>
+        /// <param name="prmIdCategory"></param>
+        /// <param name="prmName"></param>
+        /// <param name="prmDescription"></param>
+        /// <returns></returns>
 
         public bool UpdateCategory(int prmIdCategory, string prmName, string prmDescription)
         {
