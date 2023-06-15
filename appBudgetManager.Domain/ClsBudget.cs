@@ -78,7 +78,7 @@ namespace AppBudGetManager.Domain
             return fldTotalIncomes;
         }
 
-        public bool CreateTransaction(int prmIdTransaction, double prmQuantity, DateTime prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
+        public bool CreateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
         {
             ClsTransaction objTransaction = new ClsTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription);
             objTransaction.SetCategory(prmMyCategory);
@@ -98,7 +98,7 @@ namespace AppBudGetManager.Domain
             return false;
         }
 
-        public bool UpdateTransaction(int prmIdTransaction, double prmQuantity, DateTime prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
+        public bool UpdateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
         {
             return TransactionExists(prmIdTransaction, prmType).Modify(prmQuantity, prmDate, prmDescription, prmMyCategory);
         }
@@ -123,25 +123,9 @@ namespace AppBudGetManager.Domain
         }
 
 
-        public List<ClsTransaction> GenerateReport(DateTime prmStartDate, DateTime prmEndingDate)
+        public List<ClsTransaction> GenerateReport(string prmStartDate, string prmEndingDate)
         {
-            List<ClsTransaction> objTransactions = new List<ClsTransaction>();
-
-            for (int i = 0; i < fldMyIncomes.Count; i++)
-            {
-                if (fldMyIncomes[i].GetDate() >= prmStartDate && fldMyIncomes[i].GetDate() <= prmEndingDate)
-                {
-                    objTransactions.Add(fldMyIncomes[i]);
-                }
-            }
-            for (int i = 0; i < flbMyExpenses.Count; i++)
-            {
-                if (flbMyExpenses[i].GetDate() >= prmStartDate && flbMyExpenses[i].GetDate() <= prmEndingDate)
-                {
-                    objTransactions.Add(flbMyExpenses[i]);
-                }
-            }
-            return objTransactions;
+            return default;
         }
 
 

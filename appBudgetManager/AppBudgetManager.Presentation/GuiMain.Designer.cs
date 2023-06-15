@@ -143,6 +143,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Name = "GuiMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCategories)).EndInit();

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GuiAddTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuiAddTransaction.Designer.cs">
+      <DependentUpon>GuiAddTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="GuiMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GuiAddTransaction.resx">
+      <DependentUpon>GuiAddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +145,9 @@
       <Project>{202883c8-a46d-40e3-b41a-86325df5af17}</Project>
       <Name>AppBudgetManager.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

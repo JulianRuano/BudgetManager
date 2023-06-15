@@ -7,25 +7,17 @@ namespace AppBudgetManager.Presentation
     public partial class GuiMain : Form
     {
         private Form FormSecundarios = new Form();
+        private ClsSystem objSystem;
         public GuiMain()
         {
             InitializeComponent();
+            objSystem = new ClsSystem();
+            objSystem.CreateBudGet();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-             AbrirForm(new GuiHome());         
-            ClsSystem clsSystem = new ClsSystem();
-            clsSystem.CreateBudGet();
-            clsSystem.CreateCategory(1, "Food", "Food expenses");
-            clsSystem.CreateCategory(2, "Transport", "Transport expenses");
-            clsSystem.CreateCategory(3, "Salary", "Salary incomes");
-            clsSystem.CreateCategory(4, "Extra", "Extra incomes");
-
-            clsSystem.CreateTransaction(1, 1000, default, "Salary incomes", clsSystem.fldMyCategory[2], "Incomes");
-            clsSystem.CreateTransaction(2, 3000, default, "Extra incomes", clsSystem.fldMyCategory[3], "Incomes");
-            clsSystem.CreateTransaction(3, 2000, default, "Food expenses", clsSystem.fldMyCategory[0], "Expenses");
-
+             AbrirForm(new GuiHome(objSystem,pnlMain));                              
         }
 
         private void AbrirForm(Form FormHijo)

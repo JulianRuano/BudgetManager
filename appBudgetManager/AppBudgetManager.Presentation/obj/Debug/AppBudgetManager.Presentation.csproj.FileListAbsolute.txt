@@ -14,3 +14,14 @@ D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\appBudgetM
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\appBudgetManager.Domain.pdb
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\appBudgetManager.Domain.exe.config
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.csproj.CopyComplete
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiAddTransaction.resources
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\AppBudgetManager.Access.exe
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Memory.dll
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Numerics.Vectors.dll
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Buffers.dll
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\AppBudgetManager.Access.pdb
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\AppBudgetManager.Access.exe.config
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Memory.xml
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Numerics.Vectors.xml
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Buffers.xml

@@ -8,11 +8,11 @@ namespace AppBudGetManager.Domain
     {
         private int fldOIdTransaction;
         private Double fldQuantity;
-        private DateTime fldDate;
+        private string fldDate;
         private string fldDescription;
         public ClsCategory fldMyCategory;
 
-        public ClsTransaction(int prmIdTransaction, double prmQuantity, DateTime prmDate, string prmDescription)
+        public ClsTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription)
         {
             fldOIdTransaction = prmIdTransaction;
             fldQuantity = prmQuantity;
@@ -30,7 +30,7 @@ namespace AppBudGetManager.Domain
             return fldQuantity;
         }
 
-        public DateTime GetDate()
+        public string GetDate()
         {
             return fldDate;
         }
@@ -59,7 +59,7 @@ namespace AppBudGetManager.Domain
             }
         }
 
-        public bool SetDate(DateTime prmValue)
+        public bool SetDate(string prmValue)
         {
             try 
             {                
@@ -101,7 +101,7 @@ namespace AppBudGetManager.Domain
             }
         }
 
-        public bool Modify(Double prmQuantity, DateTime prmDate, string prmDescription, ClsCategory prmCategory)
+        public bool Modify(Double prmQuantity, string prmDate, string prmDescription, ClsCategory prmCategory)
         {
             if (SetQuantity(prmQuantity) && SetDate(prmDate) && SetDescription(prmDescription))
                 return SetCategory(prmCategory);

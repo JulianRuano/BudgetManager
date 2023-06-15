@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using AppBudgetManager.Access;
 
 
 namespace AppBudGetManager.Domain.System
@@ -95,12 +96,15 @@ namespace AppBudGetManager.Domain.System
         }
 
         /// <param name="prmType">Transaction Type</param>
-        public bool CreateTransaction(int prmIdTransaction, double prmQuantity, DateTime prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
-        {
+        public bool CreateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
+        {        
+           ClsTransactionService objTransactionService = new ClsTransactionService();
+           objTransactionService.InsertTransaction(prmQuantity, prmDescription, prmDate, prmMyCategory.GetIdCategory(), prmType);
+
             return fldMyBudGet.CreateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
         }
 
-        public bool UpdateTransaction(int prmIdTransaction, double prmQuantity, DateTime prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
+        public bool UpdateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
         {
             return fldMyBudGet.UpdateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
         }
