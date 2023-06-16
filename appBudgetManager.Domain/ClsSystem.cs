@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using AppBudgetManager.Access;
 
@@ -10,6 +11,7 @@ namespace AppBudGetManager.Domain.System
     {
         public ClsBudGet fldMyBudGet;
         public List<ClsCategory> fldMyCategory = new List<ClsCategory>();
+        private ClsTransactionService objTransactionService;
 
         public bool CreateBudGet()
         {
@@ -17,7 +19,9 @@ namespace AppBudGetManager.Domain.System
             {
                 if (fldMyBudGet == null)
                 {
-                    fldMyBudGet = new ClsBudGet();
+                    fldMyBudGet = new ClsBudGet();                
+                    objTransactionService = new ClsTransactionService();
+                    RepoTransaction();
                     Debug.WriteLine("Correcto");
                     return true;
                 }
@@ -97,11 +101,12 @@ namespace AppBudGetManager.Domain.System
 
         /// <param name="prmType">Transaction Type</param>
         public bool CreateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
-        {        
-           ClsTransactionService objTransactionService = new ClsTransactionService();
-           objTransactionService.InsertTransaction(prmQuantity, prmDescription, prmDate, prmMyCategory.GetIdCategory(), prmType);
-
-            return fldMyBudGet.CreateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
+        {          
+            if (objTransactionService.InsertTransaction(prmQuantity, prmDescription, prmDate, prmMyCategory.GetIdCategory(), prmType))
+            {
+                return fldMyBudGet.CreateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
+            }                  
+           return false;
         }
 
         public bool UpdateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
@@ -117,7 +122,6 @@ namespace AppBudGetManager.Domain.System
         ///verify that the category exists
         public ClsCategory CategoryExists(int prmIdCategory)
         {
-            string strMessage = "Category not found";
             foreach (ClsCategory objCategory in fldMyCategory)
             {
                 if (objCategory.GetIdCategory() == prmIdCategory)
@@ -125,7 +129,20 @@ namespace AppBudGetManager.Domain.System
                     return objCategory;
                 }
             }
-            throw new Exception(strMessage);
+            throw new Exception("Category not found");
+        }
+
+        public bool CategoryExistsBool(int prmIdCategory)
+        {
+            foreach (ClsCategory objCategory in fldMyCategory)
+            {
+                if (objCategory.GetIdCategory() == prmIdCategory)
+                {
+                    return true;
+                }
+            }
+            return false;
+
         }
 
         public ClsBudGet GetClsBudGet()
@@ -137,6 +154,29 @@ namespace AppBudGetManager.Domain.System
             return fldMyCategory;
         }
 
+        private void RepoTransaction()
+        {
+            DataSet dtTransaction = new DataSet();
+            DataSet dtCategory = new DataSet();
+            dtTransaction = objTransactionService.ConsultTransaction();
+            dtCategory = objTransactionService.ConsultCategory();
 
+
+            foreach (DataTable table in dtCategory.Tables)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                   CreateCategory(Convert.ToInt32(row["idCategory"]), row["name"].ToString(), row["description"].ToString());
+                }
+            }
+
+            foreach (DataTable table in dtTransaction.Tables)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    fldMyBudGet.CreateTransaction(Convert.ToInt32(row["idTransaction"]), Convert.ToDouble(row["quantity"]), row["transactionDate"].ToString(), row["description"].ToString(), CategoryExists(Convert.ToInt32(row["idCategory"])), row["type"].ToString());                               
+                }
+            }
+        }
     }
 }

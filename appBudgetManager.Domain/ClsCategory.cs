@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace AppBudGetManager.Domain
 {
-    public class ClsCategory
+    public class ClsCategory: IComparable<ClsCategory>
     {
         private int fldOIdCategory = 0;
         private string fldName = " ";
@@ -83,6 +83,22 @@ namespace AppBudGetManager.Domain
 
         }
 
-       
+        public int CompareTo(ClsCategory other)
+        {
+            //cero si son iguales
+            if ( this.fldOIdCategory == other.fldOIdCategory)
+            {
+                if (this.fldName == other.fldName)
+                {
+                    if(this.fldDescription == other.fldDescription)
+                    {
+                        return 0;
+                    }
+
+                }   
+            }
+            return -1;
+
+        }
     }
 }

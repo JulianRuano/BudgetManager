@@ -27,25 +27,18 @@ namespace AppBudgetManager.Presentation
             for (int i = 0; i < objSystem.GetClsBudGet().fldMyIncomes.Count; i++)
             {
                 DataRow dataRow = dt.NewRow();
-                dataRow["ID"] = objSystem.GetClsBudGet().fldMyIncomes[0].GetIdTransaction();
-                dataRow["Amount"] = objSystem.GetClsBudGet().fldMyIncomes[0].GetQuantity();
-                dataRow["Date"] = objSystem.GetClsBudGet().fldMyIncomes[0].GetDate();
-                dataRow["Category"] = objSystem.GetClsBudGet().fldMyIncomes[0].GetCategory().GetName();
-                dataRow["Description"] = objSystem.GetClsBudGet().fldMyIncomes[0].GetDescription();
+                dataRow["ID"] = objSystem.GetClsBudGet().fldMyIncomes[i].GetIdTransaction();
+                dataRow["Amount"] = objSystem.GetClsBudGet().fldMyIncomes[i].GetQuantity();
+                dataRow["Date"] = objSystem.GetClsBudGet().fldMyIncomes[i].GetDate();
+                dataRow["Category"] = objSystem.GetClsBudGet().fldMyIncomes[i].GetCategory().GetName();
+                dataRow["Description"] = objSystem.GetClsBudGet().fldMyIncomes[i].GetDescription();
                 dt.Rows.Add(dataRow);
             }
         }
 
         private void addTransaction_Click(object sender, System.EventArgs e)
         {
-            objSystem.CreateCategory(1, "Food", "Food expenses");
-            objSystem.CreateCategory(2, "Transport", "Transport expenses");
-            objSystem.CreateCategory(3, "Salary", "Salary incomes");
-            objSystem.CreateCategory(4, "Extra", "Extra incomes");
-
-            AbrirForm(new GuiAddTransaction(objSystem));
-
-            
+            AbrirForm(new GuiAddTransaction(objSystem));           
         }
 
         private void AbrirForm(Form FormHijo)

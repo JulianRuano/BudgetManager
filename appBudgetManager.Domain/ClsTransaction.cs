@@ -19,6 +19,7 @@ namespace AppBudGetManager.Domain
             fldDate = prmDate;
             fldDescription = prmDescription;
         }
+        public ClsTransaction() { }
 
         public int GetIdTransaction()
         {
@@ -43,6 +44,20 @@ namespace AppBudGetManager.Domain
         public string GetDescription()
         {
             return fldDescription;
+        }
+
+        public bool SetIdTransaction(int prmValue)
+        {
+            try
+            {
+                fldOIdTransaction = prmValue;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         public bool SetQuantity(double prmValue)

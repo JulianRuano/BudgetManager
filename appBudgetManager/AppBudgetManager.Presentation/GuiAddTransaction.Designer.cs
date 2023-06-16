@@ -31,13 +31,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.PictureBox();
             this.CalendarD = new System.Windows.Forms.MonthCalendar();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.comBoxCategory = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 201);
+            this.label1.Location = new System.Drawing.Point(165, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 31);
             this.label1.TabIndex = 7;
@@ -65,21 +66,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(165, 280);
+            this.label2.Location = new System.Drawing.Point(165, 237);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 31);
             this.label2.TabIndex = 8;
             this.label2.Text = "Category";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(165, 344);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 31);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Date";
             // 
             // btnSave
             // 
@@ -94,7 +85,7 @@
             // 
             // CalendarD
             // 
-            this.CalendarD.Location = new System.Drawing.Point(401, 344);
+            this.CalendarD.Location = new System.Drawing.Point(296, 347);
             this.CalendarD.Name = "CalendarD";
             this.CalendarD.TabIndex = 11;
             // 
@@ -107,7 +98,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(401, 190);
+            this.txtDescription.Location = new System.Drawing.Point(401, 168);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(233, 64);
             this.txtDescription.TabIndex = 14;
@@ -116,7 +107,7 @@
             // comBoxCategory
             // 
             this.comBoxCategory.FormattingEnabled = true;
-            this.comBoxCategory.Location = new System.Drawing.Point(401, 290);
+            this.comBoxCategory.Location = new System.Drawing.Point(401, 247);
             this.comBoxCategory.Name = "comBoxCategory";
             this.comBoxCategory.Size = new System.Drawing.Size(227, 21);
             this.comBoxCategory.TabIndex = 15;
@@ -131,18 +122,40 @@
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "Add Transaction";
             // 
+            // comboBoxType
+            // 
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Items.AddRange(new object[] {
+            "Incomes",
+            "Expenses"});
+            this.comboBoxType.Location = new System.Drawing.Point(401, 295);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(227, 21);
+            this.comboBoxType.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(165, 285);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 31);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Type";
+            // 
             // GuiAddTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 689);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.comBoxCategory);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.CalendarD);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
@@ -159,12 +172,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox btnSave;
         private System.Windows.Forms.MonthCalendar CalendarD;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.ComboBox comBoxCategory;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.Label label4;
     }
 }
