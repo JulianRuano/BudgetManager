@@ -10,8 +10,7 @@ namespace AppBudGetManager.Domain
             /// <summary>
             /// 
 
-            ClsSystem clsSystem = new ClsSystem();
-            clsSystem.CreateBudGet();
+            ClsSystem clsSystem = ClsSystem.GetInstance();
             clsSystem.CreateCategory(1, "Food", "Food expenses");
             clsSystem.CreateCategory(2, "Transport", "Transport expenses");
             clsSystem.CreateCategory(3, "Salary", "Salary incomes");
@@ -25,9 +24,9 @@ namespace AppBudGetManager.Domain
             Console.WriteLine("Total Incomes: " + clsSystem.GetClsBudGet().GetTotalIncomes());
             Console.WriteLine("Total Expenses: " + clsSystem.GetClsBudGet().GetTotalExpenses());
             Console.WriteLine("Balance: " + clsSystem.GetClsBudGet().GetBalance());
-            Console.WriteLine("Categoria: " + clsSystem.GetClsBudGet().fldMyIncomes[0].GetCategory().GetName());
-            Console.WriteLine("Categoria: " + clsSystem.GetClsBudGet().fldMyIncomes[1].GetCategory().GetName());
-            Console.WriteLine("Categoria: " + clsSystem.GetClsBudGet().flbMyExpenses[0].GetCategory().GetName());
+            Console.WriteLine("Categoria: " + clsSystem.GetClsBudGet().MyIncomes[0].GetCategory().GetName());
+            Console.WriteLine("Categoria: " + clsSystem.GetClsBudGet().MyIncomes[1].GetCategory().GetName());
+            Console.WriteLine("Categoria: " + clsSystem.GetClsBudGet().MyExpenses[0].GetCategory().GetName());
             Console.ReadLine();
         }
     }

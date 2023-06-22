@@ -25,3 +25,5 @@ D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\AppBudgetM
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Memory.xml
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Numerics.Vectors.xml
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Buffers.xml
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiAddCategory.resources
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiReport.resources

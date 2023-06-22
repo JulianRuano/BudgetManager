@@ -141,5 +141,27 @@ namespace AppBudGetManager.Domain
             }
         }
 
+        public int CompareTo(ClsTransaction other)
+        {
+            //cero si son iguales
+            if(this.fldOIdTransaction == other.fldOIdTransaction)
+            {
+                if(this.fldDescription == other.fldDescription)
+                {
+                    if(this.fldDate == other.fldDate)
+                    {
+                        if(this.fldQuantity == other.fldQuantity)
+                        {
+                            if(this.fldMyCategory == other.fldMyCategory)
+                            {
+                                return 0;
+                            }                          
+                        }                       
+                    }                  
+                }                
+            }
+            return 1;
+
+        }
     }
 }

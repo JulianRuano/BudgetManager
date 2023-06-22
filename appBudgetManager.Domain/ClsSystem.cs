@@ -10,9 +10,30 @@ namespace AppBudGetManager.Domain.System
     public class ClsSystem
     {
         public ClsBudGet fldMyBudGet;
-        public List<ClsCategory> fldMyCategory = new List<ClsCategory>();
-        private ClsTransactionService objTransactionService;
+        public List<ClsCategory> fldMyCategory;
+        private static ClsSystem objSystem;
 
+        //Singleton
+        private ClsSystem()
+        {
+            fldMyCategory = new List<ClsCategory>();
+            CreateBudGet();
+        }
+        public static ClsSystem GetInstance()
+        {
+            if (objSystem == null)
+            {
+                objSystem = new ClsSystem();
+                return objSystem;
+            }
+            else
+            {
+                return objSystem;
+            }
+        }
+
+
+        #region BudGet
         public bool CreateBudGet()
         {
             try
@@ -20,8 +41,6 @@ namespace AppBudGetManager.Domain.System
                 if (fldMyBudGet == null)
                 {
                     fldMyBudGet = new ClsBudGet();                
-                    objTransactionService = new ClsTransactionService();
-                    RepoTransaction();
                     Debug.WriteLine("Correcto");
                     return true;
                 }
@@ -60,6 +79,10 @@ namespace AppBudGetManager.Domain.System
             }            
         }
 
+        #endregion BudGet
+
+        #region Category
+
         public bool CreateCategory(int prmIdCategory, string prmName, string prmDescription)
         {
             try {
@@ -71,22 +94,15 @@ namespace AppBudGetManager.Domain.System
                 Debug.WriteLine(ex.Message);
                 return false;
             }
-
         }
 
         /// <summary>
         /// add a new category to the list  of categories 
         /// </summary>
-        /// <param name="prmIdCategory"></param>
-        /// <param name="prmName"></param>
-        /// <param name="prmDescription"></param>
-        /// <returns></returns>
-
         public bool UpdateCategory(int prmIdCategory, string prmName, string prmDescription)
         {
             return CategoryExists(prmIdCategory).Modify(prmName, prmDescription);
         }
-
 
         public bool DeleteCategory(int prmIdCategory)
         {
@@ -99,14 +115,14 @@ namespace AppBudGetManager.Domain.System
             return false;
         }
 
+        #endregion Category
+
+        #region Transaction
+
         /// <param name="prmType">Transaction Type</param>
         public bool CreateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
         {          
-            if (objTransactionService.InsertTransaction(prmQuantity, prmDescription, prmDate, prmMyCategory.GetIdCategory(), prmType))
-            {
-                return fldMyBudGet.CreateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
-            }                  
-           return false;
+            return fldMyBudGet.CreateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
         }
 
         public bool UpdateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
@@ -132,6 +148,8 @@ namespace AppBudGetManager.Domain.System
             throw new Exception("Category not found");
         }
 
+        #endregion Transaction
+
         public bool CategoryExistsBool(int prmIdCategory)
         {
             foreach (ClsCategory objCategory in fldMyCategory)
@@ -149,34 +167,12 @@ namespace AppBudGetManager.Domain.System
         {
             return fldMyBudGet;
         }
+
         public List<ClsCategory> GetListCategories()
         {
             return fldMyCategory;
         }
 
-        private void RepoTransaction()
-        {
-            DataSet dtTransaction = new DataSet();
-            DataSet dtCategory = new DataSet();
-            dtTransaction = objTransactionService.ConsultTransaction();
-            dtCategory = objTransactionService.ConsultCategory();
-
-
-            foreach (DataTable table in dtCategory.Tables)
-            {
-                foreach (DataRow row in table.Rows)
-                {
-                   CreateCategory(Convert.ToInt32(row["idCategory"]), row["name"].ToString(), row["description"].ToString());
-                }
-            }
-
-            foreach (DataTable table in dtTransaction.Tables)
-            {
-                foreach (DataRow row in table.Rows)
-                {
-                    fldMyBudGet.CreateTransaction(Convert.ToInt32(row["idTransaction"]), Convert.ToDouble(row["quantity"]), row["transactionDate"].ToString(), row["description"].ToString(), CategoryExists(Convert.ToInt32(row["idCategory"])), row["type"].ToString());                               
-                }
-            }
-        }
+       
     }
 }

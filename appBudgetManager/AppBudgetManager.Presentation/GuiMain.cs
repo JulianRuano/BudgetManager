@@ -1,23 +1,20 @@
 ﻿using System;
-using AppBudGetManager.Domain.System;
 using System.Windows.Forms;
+
 
 namespace AppBudgetManager.Presentation
 {
     public partial class GuiMain : Form
     {
         private Form FormSecundarios = new Form();
-        private ClsSystem objSystem;
         public GuiMain()
         {
             InitializeComponent();
-            objSystem = new ClsSystem();
-            objSystem.CreateBudGet();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-             AbrirForm(new GuiHome(objSystem,pnlMain));                              
+             AbrirForm(new GuiHome(pnlMain));                              
         }
 
         private void AbrirForm(Form FormHijo)

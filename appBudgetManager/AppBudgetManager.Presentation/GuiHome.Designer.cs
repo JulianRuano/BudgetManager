@@ -34,28 +34,32 @@
             this.lblBalance = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.btnEdit = new System.Windows.Forms.PictureBox();
             this.addTransaction = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnExpenses = new System.Windows.Forms.PictureBox();
+            this.btnIncomes = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdTransaction = new System.Windows.Forms.TextBox();
             this.DGVHome = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblTypeBalance = new System.Windows.Forms.Label();
+            this.lblAux = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addTransaction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExpenses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnIncomes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(398, 53);
+            this.lblTitulo.Location = new System.Drawing.Point(211, 53);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(94, 37);
             this.lblTitulo.TabIndex = 1;
@@ -65,7 +69,7 @@
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(354, 111);
+            this.lblBalance.Location = new System.Drawing.Point(211, 108);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(128, 39);
             this.lblBalance.TabIndex = 2;
@@ -91,27 +95,29 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Id transaction";
             // 
-            // pictureBox6
+            // btnDelete
             // 
-            this.pictureBox6.Image = global::AppBudgetManager.Presentation.Properties.Resources.Delete;
-            this.pictureBox6.InitialImage = null;
-            this.pictureBox6.Location = new System.Drawing.Point(547, 600);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 9;
-            this.pictureBox6.TabStop = false;
+            this.btnDelete.Image = global::AppBudgetManager.Presentation.Properties.Resources.Delete;
+            this.btnDelete.InitialImage = null;
+            this.btnDelete.Location = new System.Drawing.Point(547, 600);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(50, 49);
+            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // pictureBox5
+            // btnEdit
             // 
-            this.pictureBox5.Image = global::AppBudgetManager.Presentation.Properties.Resources.Edit;
-            this.pictureBox5.InitialImage = null;
-            this.pictureBox5.Location = new System.Drawing.Point(491, 600);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
+            this.btnEdit.Image = global::AppBudgetManager.Presentation.Properties.Resources.Edit;
+            this.btnEdit.InitialImage = null;
+            this.btnEdit.Location = new System.Drawing.Point(491, 600);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(50, 49);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // addTransaction
             // 
@@ -125,44 +131,46 @@
             this.addTransaction.TabStop = false;
             this.addTransaction.Click += new System.EventHandler(this.addTransaction_Click);
             // 
-            // pictureBox3
+            // btnExpenses
             // 
-            this.pictureBox3.Image = global::AppBudgetManager.Presentation.Properties.Resources.Expenses;
-            this.pictureBox3.Location = new System.Drawing.Point(477, 172);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(225, 81);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.btnExpenses.Image = global::AppBudgetManager.Presentation.Properties.Resources.Expenses;
+            this.btnExpenses.Location = new System.Drawing.Point(477, 172);
+            this.btnExpenses.Name = "btnExpenses";
+            this.btnExpenses.Size = new System.Drawing.Size(225, 81);
+            this.btnExpenses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExpenses.TabIndex = 4;
+            this.btnExpenses.TabStop = false;
+            this.btnExpenses.Click += new System.EventHandler(this.btnExpenses_Click);
             // 
-            // pictureBox2
+            // btnIncomes
             // 
-            this.pictureBox2.Image = global::AppBudgetManager.Presentation.Properties.Resources.Incomes;
-            this.pictureBox2.Location = new System.Drawing.Point(112, 172);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(225, 81);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.btnIncomes.Image = global::AppBudgetManager.Presentation.Properties.Resources.Incomes;
+            this.btnIncomes.Location = new System.Drawing.Point(112, 172);
+            this.btnIncomes.Name = "btnIncomes";
+            this.btnIncomes.Size = new System.Drawing.Size(225, 81);
+            this.btnIncomes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnIncomes.TabIndex = 3;
+            this.btnIncomes.TabStop = false;
+            this.btnIncomes.Click += new System.EventHandler(this.btnIncomes_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AppBudgetManager.Presentation.Properties.Resources.dolar;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(342, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(155, 53);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtIdTransaction
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(274, 611);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 38);
-            this.textBox1.TabIndex = 10;
+            this.txtIdTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdTransaction.Location = new System.Drawing.Point(274, 611);
+            this.txtIdTransaction.Name = "txtIdTransaction";
+            this.txtIdTransaction.Size = new System.Drawing.Size(199, 38);
+            this.txtIdTransaction.TabIndex = 10;
             // 
             // DGVHome
             // 
@@ -198,32 +206,67 @@
             this.DGVHome.Size = new System.Drawing.Size(677, 243);
             this.DGVHome.TabIndex = 11;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::AppBudgetManager.Presentation.Properties.Resources.dolar;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(491, 53);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblTypeBalance
+            // 
+            this.lblTypeBalance.AutoSize = true;
+            this.lblTypeBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeBalance.Location = new System.Drawing.Point(547, 53);
+            this.lblTypeBalance.Name = "lblTypeBalance";
+            this.lblTypeBalance.Size = new System.Drawing.Size(144, 37);
+            this.lblTypeBalance.TabIndex = 13;
+            this.lblTypeBalance.Text = "Incomes";
+            // 
+            // lblAux
+            // 
+            this.lblAux.AutoSize = true;
+            this.lblAux.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAux.Location = new System.Drawing.Point(547, 108);
+            this.lblAux.Name = "lblAux";
+            this.lblAux.Size = new System.Drawing.Size(128, 39);
+            this.lblAux.TabIndex = 14;
+            this.lblAux.Text = "10.500";
+            // 
             // GuiHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 689);
+            this.Controls.Add(this.lblAux);
+            this.Controls.Add(this.lblTypeBalance);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.DGVHome);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.txtIdTransaction);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.addTransaction);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnExpenses);
+            this.Controls.Add(this.btnIncomes);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
             this.Name = "GuiHome";
             this.Text = "GuiHomecs";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addTransaction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExpenses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnIncomes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,14 +277,17 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblBalance;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox btnIncomes;
+        private System.Windows.Forms.PictureBox btnExpenses;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox addTransaction;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox btnEdit;
+        private System.Windows.Forms.PictureBox btnDelete;
+        private System.Windows.Forms.TextBox txtIdTransaction;
         private System.Windows.Forms.DataGridView DGVHome;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblTypeBalance;
+        private System.Windows.Forms.Label lblAux;
     }
 }

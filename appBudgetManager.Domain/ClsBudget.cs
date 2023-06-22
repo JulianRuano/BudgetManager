@@ -11,8 +11,8 @@ namespace AppBudGetManager.Domain
         private double fldBalance;
         private double fldTotalIncomes;
         private double fldTotalExpenses;
-        public List<ClsTransaction> fldMyIncomes;
-        public List<ClsTransaction> flbMyExpenses;
+        private List<ClsTransaction> fldMyIncomes;
+        private List<ClsTransaction> flbMyExpenses;
 
         public ClsBudGet()
         {

@@ -76,6 +76,7 @@
     <Compile Include="ClsBudget.cs" />
     <Compile Include="ClsCategory.cs" />
     <Compile Include="ClsSystem.cs" />
+    <Compile Include="Services\ClsSystemServices.cs" />
     <Compile Include="ClsTransaction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +91,7 @@
       <Name>AppBudgetManager.Access</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\appBudgetManager\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\appBudgetManager\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

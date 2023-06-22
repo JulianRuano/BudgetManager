@@ -31,7 +31,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.PictureBox();
             this.CalendarD = new System.Windows.Forms.MonthCalendar();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
@@ -39,49 +38,39 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(165, 123);
+            this.label3.Font = new System.Drawing.Font("Maiandra GD", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(195, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 31);
+            this.label3.Size = new System.Drawing.Size(110, 32);
             this.label3.TabIndex = 6;
             this.label3.Text = "Amount";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 181);
+            this.label1.Font = new System.Drawing.Font("Maiandra GD", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(195, 180);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 31);
+            this.label1.Size = new System.Drawing.Size(147, 32);
             this.label1.TabIndex = 7;
             this.label1.Text = "Description";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(165, 237);
+            this.label2.Font = new System.Drawing.Font("Maiandra GD", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(195, 236);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 31);
+            this.label2.Size = new System.Drawing.Size(121, 32);
             this.label2.TabIndex = 8;
             this.label2.Text = "Category";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = global::AppBudgetManager.Presentation.Properties.Resources.Save;
-            this.btnSave.Location = new System.Drawing.Point(296, 560);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(225, 81);
-            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSave.TabIndex = 10;
-            this.btnSave.TabStop = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // CalendarD
             // 
@@ -115,10 +104,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(298, 33);
+            this.lblTitulo.Font = new System.Drawing.Font("Maiandra GD", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(324, 33);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(268, 37);
+            this.lblTitulo.Size = new System.Drawing.Size(220, 35);
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "Add Transaction";
             // 
@@ -136,12 +125,23 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(165, 285);
+            this.label4.Font = new System.Drawing.Font("Maiandra GD", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(195, 284);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 31);
+            this.label4.Size = new System.Drawing.Size(73, 32);
             this.label4.TabIndex = 18;
             this.label4.Text = "Type";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::AppBudgetManager.Presentation.Properties.Resources.Save;
+            this.btnSave.Location = new System.Drawing.Point(296, 560);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(225, 81);
+            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSave.TabIndex = 10;
+            this.btnSave.TabStop = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // GuiAddTransaction
             // 
