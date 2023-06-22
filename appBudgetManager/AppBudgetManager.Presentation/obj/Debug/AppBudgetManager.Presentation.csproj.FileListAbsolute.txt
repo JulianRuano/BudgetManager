@@ -27,3 +27,4 @@ D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Num
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Buffers.xml
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiAddCategory.resources
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiReport.resources
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiUptadeTransaction.resources

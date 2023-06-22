@@ -105,7 +105,7 @@ namespace appBudgetManager.Domain
         }
         public bool UpdateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
         {
-            if (objTransactionService.UpdateTransaction(prmIdTransaction, prmQuantity, prmDescription, prmDate, prmMyCategory.GetIdCategory(), prmType))
+            if (objTransactionService.UpdateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory.GetIdCategory(), prmType))
             {
                 return objSystem.UpdateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
             }

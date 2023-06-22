@@ -94,7 +94,14 @@ namespace AppBudgetManager.Presentation
         private void btnEdit_Click(object sender, System.EventArgs e)
         {
             // Edit Transaction
-            AbrirForm(new GuiAddTransaction(int.Parse(txtIdTransaction.Text),lblTypeBalance.Text));
+            if(txtIdTransaction.Text != "")
+            {
+                AbrirForm(new GuiUptadeTransaction(int.Parse(txtIdTransaction.Text), lblTypeBalance.Text));
+            }else
+            {
+                MessageBox.Show("Please enter the transition id", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+                
         }
 
         private void btnDelete_Click(object sender, System.EventArgs e)
@@ -102,5 +109,23 @@ namespace AppBudgetManager.Presentation
             // Delete Transaction
             objSystemServices.GetSystem().GetClsBudGet().DeleteTransaction(int.Parse(txtIdTransaction.Text), lblTypeBalance.Text);
         }
+
+        #region Events
+        private void onlyNumbers(KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("only numbers", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtIdTransaction_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onlyNumbers(e);
+        }
+
+        #endregion Events
     }
 }

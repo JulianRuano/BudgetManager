@@ -76,6 +76,12 @@
     <Compile Include="GuiReport.Designer.cs">
       <DependentUpon>GuiReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuiUptadeTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuiUptadeTransaction.Designer.cs">
+      <DependentUpon>GuiUptadeTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GuiAddCategory.resx">
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GuiReport.resx">
       <DependentUpon>GuiReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuiUptadeTransaction.resx">
+      <DependentUpon>GuiUptadeTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

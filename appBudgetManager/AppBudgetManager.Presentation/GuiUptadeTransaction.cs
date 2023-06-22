@@ -1,21 +1,28 @@
 ﻿using appBudgetManager.Domain;
+using AppBudGetManager.Domain;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
-using AppBudGetManager.Domain;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AppBudgetManager.Presentation
 {
-    public partial class GuiAddTransaction : Form
+    public partial class GuiUptadeTransaction : Form
     {
         private ClsSystemServices objSystemServices;
         private Dictionary<int, string> comboBoxItems;
-        public GuiAddTransaction()                 
+        private int idTransaction;
+        public GuiUptadeTransaction(int prmIdTransaction, string prmType)
         {
-            InitializeComponent();          
+            InitializeComponent();
             loadData();
+            idTransaction = prmIdTransaction;
+            ClsTransaction objTransaction = objSystemServices.GetSystem().GetClsBudGet().TransactionExists(prmIdTransaction, prmType);
+            txtQuantity.Text = objTransaction.GetQuantity().ToString();
+            txtDescription.Text = objTransaction.GetDescription();
+            comBoxCategory.SelectedItem = objTransaction.GetCategory().GetName();
+            comboBoxType.SelectedItem = prmType;
         }
 
         private void loadData()
@@ -32,6 +39,7 @@ namespace AppBudgetManager.Presentation
             {
                 comBoxCategory.Items.Add(item.Value);
             }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -45,26 +53,10 @@ namespace AppBudgetManager.Presentation
             var selectedItem = comBoxCategory.SelectedItem.ToString();
             int idCategory = comboBoxItems.FirstOrDefault(x => x.Value == selectedItem).Key;
 
-            objSystemServices.CreateTransaction(0, quantity, dateString, description, objSystemServices.GetSystem().CategoryExists(idCategory), type);
-            MessageBox.Show("Transaction added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            objSystemServices.UpdateTransaction(idTransaction, quantity, dateString, description, objSystemServices.GetSystem().CategoryExists(idCategory), type);
+            MessageBox.Show("Transition successfully updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtQuantity.Text = "";
             txtDescription.Text = "";
         }
-        #region Events
-        private void onlyNumbers(KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Only numbers", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            onlyNumbers(e);
-        }
-        #endregion Events
     }
 }

@@ -171,6 +171,7 @@
             this.txtIdTransaction.Name = "txtIdTransaction";
             this.txtIdTransaction.Size = new System.Drawing.Size(199, 38);
             this.txtIdTransaction.TabIndex = 10;
+            this.txtIdTransaction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdTransaction_KeyPress);
             // 
             // DGVHome
             // 
