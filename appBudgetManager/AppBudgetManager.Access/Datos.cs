@@ -23,5 +23,22 @@ namespace AppBudgetManager.Access
             miAdaptador.Fill(ds, "ResultadoDatos");
             return ds;
         }
+
+        //Retornar el id de la consulta
+        public int ejecutarSELECTID(string consulta)
+        {
+            int id = 0;
+            OracleConnection miConexion = new OracleConnection(cadenaConexion);
+            OracleCommand miComando = new OracleCommand(consulta, miConexion);
+            miConexion.Open();
+            OracleDataReader reader = miComando.ExecuteReader();
+            if (reader.Read())
+            {
+                id = reader.GetInt32(0);
+            }
+            miConexion.Close();
+            return id;
+        }
+
     }
 }

@@ -115,7 +115,7 @@ namespace AppBudGetManager.Domain
                 return false;
             }
         }
-
+        // modify all data from object
         public bool Modify(Double prmQuantity, string prmDate, string prmDescription, ClsCategory prmCategory)
         {
             if (SetQuantity(prmQuantity) && SetDate(prmDate) && SetDescription(prmDescription))
@@ -123,6 +123,7 @@ namespace AppBudGetManager.Domain
             return false;
         }
 
+        // delete all data from object
         public bool Die()
         {
             try
@@ -141,6 +142,7 @@ namespace AppBudGetManager.Domain
             }
         }
 
+        // test if two objects are equal
         public int CompareTo(ClsTransaction other)
         {
             //cero si son iguales

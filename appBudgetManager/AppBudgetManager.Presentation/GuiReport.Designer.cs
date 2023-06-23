@@ -33,11 +33,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DGVHome = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
+            this.btnGenerate = new System.Windows.Forms.PictureBox();
+            this.dateTimeStart = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.DGVHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGenerate)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,47 +94,50 @@
             this.DGVHome.Size = new System.Drawing.Size(677, 243);
             this.DGVHome.TabIndex = 17;
             // 
-            // textBox1
+            // btnGenerate
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(152, 158);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 38);
-            this.textBox1.TabIndex = 18;
+            this.btnGenerate.Image = global::AppBudgetManager.Presentation.Properties.Resources.Generate;
+            this.btnGenerate.Location = new System.Drawing.Point(311, 221);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(176, 52);
+            this.btnGenerate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGenerate.TabIndex = 20;
+            this.btnGenerate.TabStop = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // textBox2
+            // dateTimeStart
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(477, 158);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 38);
-            this.textBox2.TabIndex = 19;
+            this.dateTimeStart.CustomFormat = "yyyy/mm/dd";
+            this.dateTimeStart.Location = new System.Drawing.Point(152, 170);
+            this.dateTimeStart.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateTimeStart.MinDate = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
+            this.dateTimeStart.Name = "dateTimeStart";
+            this.dateTimeStart.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeStart.TabIndex = 21;
             // 
-            // btnSave
+            // dateTimeEnd
             // 
-            this.btnSave.Image = global::AppBudgetManager.Presentation.Properties.Resources.Generate;
-            this.btnSave.Location = new System.Drawing.Point(311, 221);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(176, 52);
-            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSave.TabIndex = 20;
-            this.btnSave.TabStop = false;
+            this.dateTimeEnd.CustomFormat = "yyyy/mm/dd";
+            this.dateTimeEnd.Location = new System.Drawing.Point(477, 161);
+            this.dateTimeEnd.Name = "dateTimeEnd";
+            this.dateTimeEnd.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeEnd.TabIndex = 22;
             // 
             // GuiReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 689);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dateTimeEnd);
+            this.Controls.Add(this.dateTimeStart);
+            this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.DGVHome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Name = "GuiReport";
             this.Text = "GuiReport";
             ((System.ComponentModel.ISupportInitialize)(this.DGVHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGenerate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,8 +148,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView DGVHome;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox btnSave;
+        private System.Windows.Forms.PictureBox btnGenerate;
+        private System.Windows.Forms.DateTimePicker dateTimeEnd;
+        private System.Windows.Forms.DateTimePicker dateTimeStart;
     }
 }

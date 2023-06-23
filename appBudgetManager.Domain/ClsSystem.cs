@@ -37,7 +37,6 @@ namespace AppBudGetManager.Domain.System
             }
         }
 
-
         #region BudGet
         /// <summary>
         /// Create a new budGet 

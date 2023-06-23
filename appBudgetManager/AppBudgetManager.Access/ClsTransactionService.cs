@@ -104,5 +104,32 @@ namespace AppBudgetManager.Access
         }
 
 
+        public int ConsultIdTransaction()
+        {
+            string consulta;
+            consulta = "SELECT MAX(idcategory) AS max_id FROM transaction";
+            return dt.ejecutarSELECTID(consulta);
+        }
+
+        public int ConsultIdCategory()
+        {
+            string consulta;
+            consulta = "SELECT MAX(idcategory) AS max_id FROM category";
+            return dt.ejecutarSELECTID(consulta);
+        }
+
+        public DataSet ConsultTransactionReport(string startDate, string endDate)
+        {
+            string consulta;
+            consulta = "SELECT  CASE WHEN t.type = 'Incomes' THEN 'Ingresos' ELSE 'Gastos' END AS Tipo, " +
+                    " COUNT(*) AS TotalTransacciones,   SUM(t.quantity) AS SumaCantidad" +
+                    " FROM  " +
+                    " transaction t " +
+                    " WHERE   t.transactionDate >= TO_DATE('"+startDate+ "', 'dd-mm-yyyy') AND t.transactionDate <= TO_DATE('"+endDate+ "', 'dd-mm-yyyy') " +
+                    " GROUP BY  t.type;";
+            return dt.ejecutarSELECT(consulta);
+        }
+
+
     }
 }

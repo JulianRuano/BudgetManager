@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 
 
@@ -13,6 +14,7 @@ namespace AppBudGetManager.Domain
         private double fldTotalExpenses;
         private List<ClsTransaction> fldMyIncomes;
         private List<ClsTransaction> flbMyExpenses;
+        private DataSet fldReport;
 
         public ClsBudGet()
         {
@@ -21,6 +23,7 @@ namespace AppBudGetManager.Domain
             fldTotalExpenses = 0.0;
             fldMyIncomes = new List<ClsTransaction>();
             flbMyExpenses = new List<ClsTransaction>();
+            fldReport = new DataSet();
         }
 
         protected bool SetBalance(double prmValue)
@@ -126,9 +129,15 @@ namespace AppBudGetManager.Domain
         }
 
 
-        public List<ClsTransaction> GenerateReport(string prmStartDate, string prmEndingDate)
+        public DataSet GetReport()
         {
-            return default;
+            return fldReport;
+        }
+
+        public bool SetReport(DataSet prmReport)
+        {
+            fldReport = prmReport;
+            return true;
         }
 
 
@@ -157,7 +166,32 @@ namespace AppBudGetManager.Domain
             return null;
         }
 
-       
+        public bool TransactionExistsBool(int prmIdTransaction, string prmType)
+        {
+            if (prmType == "Incomes")
+            {
+                for (int i = 0; i < fldMyIncomes.Count; i++)
+                {
+                    if (fldMyIncomes[i].GetIdTransaction() == prmIdTransaction)
+                    {
+                        return true;
+                    }
+                }
+            }
+            else if (prmType == "Expenses")
+            {
+                for (int i = 0; i < flbMyExpenses.Count; i++)
+                {
+                    if (flbMyExpenses[i].GetIdTransaction() == prmIdTransaction)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
 
         /// <summary>
         /// Property for collection of ClsTransaction

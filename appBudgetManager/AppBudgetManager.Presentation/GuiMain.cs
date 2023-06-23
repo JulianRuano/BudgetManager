@@ -37,7 +37,7 @@ namespace AppBudgetManager.Presentation
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            AbrirForm(new GuiCategory());
+            AbrirForm(new GuiCategory(pnlMain));
         }
 
         private void btnReport_Click(object sender, EventArgs e)

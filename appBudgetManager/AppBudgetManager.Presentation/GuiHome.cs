@@ -96,7 +96,17 @@ namespace AppBudgetManager.Presentation
             // Edit Transaction
             if(txtIdTransaction.Text != "")
             {
-                AbrirForm(new GuiUptadeTransaction(int.Parse(txtIdTransaction.Text), lblTypeBalance.Text));
+                int IdTransaction = int.Parse(txtIdTransaction.Text);
+                // verificar si existe la transaccion
+                if (objSystemServices.GetSystem().GetClsBudGet().TransactionExistsBool(IdTransaction, lblTypeBalance.Text))
+                {
+                    AbrirForm(new GuiUptadeTransaction(IdTransaction, lblTypeBalance.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Transaction not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtIdTransaction.Text = "";
+                }              
             }else
             {
                 MessageBox.Show("Please enter the transition id", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -106,8 +116,28 @@ namespace AppBudgetManager.Presentation
 
         private void btnDelete_Click(object sender, System.EventArgs e)
         {
-            // Delete Transaction
-            objSystemServices.GetSystem().GetClsBudGet().DeleteTransaction(int.Parse(txtIdTransaction.Text), lblTypeBalance.Text);
+            DialogResult resultado = MessageBox.Show("Are you sure you want to delete the data??", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.No)
+            { return; }
+            if (txtIdTransaction.Text != "")
+            {
+                int IdTransaction = int.Parse(txtIdTransaction.Text);
+                // verificar si existe la transaccion
+                if (objSystemServices.GetSystem().GetClsBudGet().TransactionExistsBool(IdTransaction, lblTypeBalance.Text))
+                {
+                    objSystemServices.DeleteTransaction(IdTransaction, lblTypeBalance.Text);
+                    MessageBox.Show("Transaction deleted", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtIdTransaction.Text = "";
+                    //Limpiar el DataTable
+                    dt.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Transaction not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtIdTransaction.Text = "";
+                }
+            }
+            
         }
 
         #region Events

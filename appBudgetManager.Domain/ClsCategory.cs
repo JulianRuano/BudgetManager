@@ -67,6 +67,7 @@ namespace AppBudGetManager.Domain
             }
         }
 
+        // add transaction to list
         public bool AddTransactions(ClsTransaction prmTransaction)
         {
             try
@@ -80,6 +81,7 @@ namespace AppBudGetManager.Domain
                 return false;
             }
         }
+        // remove transaction from list
         public bool RemoveTransaction(int prmIdTransactions)
         {
             try
@@ -102,6 +104,7 @@ namespace AppBudGetManager.Domain
             
         }
 
+        // modify all data from object
         public bool Modify(string prmName, string prmDescription)
         {
             if (SetName(prmName))
@@ -109,6 +112,7 @@ namespace AppBudGetManager.Domain
             return false;
         }
 
+        // delete all data from object
         public bool Die()
         {
             try { 
@@ -124,7 +128,7 @@ namespace AppBudGetManager.Domain
             }
 
         }
-
+        // Test if two objects are equal
         public int CompareTo(ClsCategory other)
         {
             //cero si son iguales

@@ -31,15 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVHome = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.txtIdCategory = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.btnEdit = new System.Windows.Forms.PictureBox();
             this.addTransaction = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addTransaction)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,36 +77,38 @@
             this.DGVHome.Size = new System.Drawing.Size(677, 310);
             this.DGVHome.TabIndex = 12;
             // 
-            // textBox1
+            // txtIdCategory
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(234, 584);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 38);
-            this.textBox1.TabIndex = 15;
+            this.txtIdCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdCategory.Location = new System.Drawing.Point(234, 584);
+            this.txtIdCategory.Name = "txtIdCategory";
+            this.txtIdCategory.Size = new System.Drawing.Size(199, 38);
+            this.txtIdCategory.TabIndex = 15;
+            this.txtIdCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdCategory_KeyPress);
             // 
-            // pictureBox6
+            // btnDelete
             // 
-            this.pictureBox6.Image = global::AppBudgetManager.Presentation.Properties.Resources.Delete;
-            this.pictureBox6.InitialImage = null;
-            this.pictureBox6.Location = new System.Drawing.Point(506, 576);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 18;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.btnDelete.Image = global::AppBudgetManager.Presentation.Properties.Resources.Delete;
+            this.btnDelete.InitialImage = null;
+            this.btnDelete.Location = new System.Drawing.Point(506, 576);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(50, 49);
+            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // pictureBox5
+            // btnEdit
             // 
-            this.pictureBox5.Image = global::AppBudgetManager.Presentation.Properties.Resources.Edit;
-            this.pictureBox5.InitialImage = null;
-            this.pictureBox5.Location = new System.Drawing.Point(450, 576);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 17;
-            this.pictureBox5.TabStop = false;
+            this.btnEdit.Image = global::AppBudgetManager.Presentation.Properties.Resources.Edit;
+            this.btnEdit.InitialImage = null;
+            this.btnEdit.Location = new System.Drawing.Point(450, 576);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(50, 49);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // addTransaction
             // 
@@ -118,6 +120,7 @@
             this.addTransaction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.addTransaction.TabIndex = 16;
             this.addTransaction.TabStop = false;
+            this.addTransaction.Click += new System.EventHandler(this.addTransaction_Click);
             // 
             // label3
             // 
@@ -138,25 +141,24 @@
             this.label1.Size = new System.Drawing.Size(179, 32);
             this.label1.TabIndex = 20;
             this.label1.Text = "Add Category";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // GuiAddCategory
+            // GuiCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 689);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.addTransaction);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtIdCategory);
             this.Controls.Add(this.DGVHome);
-            this.Name = "GuiAddCategory";
+            this.Name = "GuiCategory";
             this.Text = "GuiAddCategory";
             ((System.ComponentModel.ISupportInitialize)(this.DGVHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addTransaction)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,9 +168,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DGVHome;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TextBox txtIdCategory;
+        private System.Windows.Forms.PictureBox btnDelete;
+        private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.PictureBox addTransaction;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;

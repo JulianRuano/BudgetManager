@@ -28,3 +28,5 @@ D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\bin\Debug\System.Buf
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiReport.resources
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiUptadeTransaction.resources
 D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiCategory.resources
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiAddCategory.resources
+D:\C#\Manage\appBudgetManager\AppBudgetManager.Presentation\obj\Debug\AppBudgetManager.Presentation.GuiUpdateCategory.resources

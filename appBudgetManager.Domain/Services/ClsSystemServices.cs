@@ -46,6 +46,7 @@ namespace appBudgetManager.Domain
             {     
                 if (objTransactionService.InsertCategory(prmName, prmDescription))
                 {
+                    prmIdCategory = objTransactionService.ConsultIdCategory();
                     return objSystem.CreateCategory(prmIdCategory, prmName, prmDescription);
                 }
                 return false;
@@ -99,6 +100,8 @@ namespace appBudgetManager.Domain
         {
             if (objTransactionService.InsertTransaction(prmQuantity, prmDescription, prmDate, prmMyCategory.GetIdCategory(), prmType))
             {
+                //retrive id
+                prmIdTransaction = objTransactionService.ConsultIdTransaction();
                 return objSystem.CreateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
             }
             return false;
@@ -121,6 +124,14 @@ namespace appBudgetManager.Domain
         }
 
         #endregion Transaction
+
+        #region report
+
+        public bool ReportTransaction(string prmStartDate, string prmEndDate)
+        {
+           return objSystemServices.GetSystem().GetClsBudGet().SetReport(objTransactionService.ConsultTransactionReport(prmStartDate, prmEndDate));
+        }
+        #endregion report
 
         #region Load data
         private void RepoTransaction()

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GuiAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuiAddCategory.Designer.cs">
+      <DependentUpon>GuiAddCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="GuiCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="GuiAddTransaction.Designer.cs">
       <DependentUpon>GuiAddTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuiUpdateCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuiUpdateCategory.Designer.cs">
+      <DependentUpon>GuiUpdateCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="GuiMain.cs">
       <SubType>Form</SubType>
@@ -84,11 +96,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GuiAddCategory.resx">
+      <DependentUpon>GuiAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GuiCategory.resx">
       <DependentUpon>GuiCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuiAddTransaction.resx">
       <DependentUpon>GuiAddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuiUpdateCategory.resx">
+      <DependentUpon>GuiUpdateCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>
