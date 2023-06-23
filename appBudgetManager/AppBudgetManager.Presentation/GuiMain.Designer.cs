@@ -33,16 +33,17 @@
             this.btnCategories = new System.Windows.Forms.PictureBox();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnTwitter = new System.Windows.Forms.PictureBox();
+            this.btnEmail = new System.Windows.Forms.PictureBox();
+            this.btnGit = new System.Windows.Forms.PictureBox();
+            this.lblAyuda = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.btnReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTwitter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGit)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -63,6 +64,7 @@
             this.btnReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnReport.TabIndex = 10;
             this.btnReport.TabStop = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnCategories
             // 
@@ -74,6 +76,7 @@
             this.btnCategories.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCategories.TabIndex = 9;
             this.btnCategories.TabStop = false;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // btnHome
             // 
@@ -98,35 +101,46 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox4
+            // btnTwitter
             // 
-            this.pictureBox4.Image = global::AppBudgetManager.Presentation.Properties.Resources.Twitter;
-            this.pictureBox4.Location = new System.Drawing.Point(159, 650);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
+            this.btnTwitter.Image = global::AppBudgetManager.Presentation.Properties.Resources.Twitter;
+            this.btnTwitter.Location = new System.Drawing.Point(159, 638);
+            this.btnTwitter.Name = "btnTwitter";
+            this.btnTwitter.Size = new System.Drawing.Size(46, 46);
+            this.btnTwitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnTwitter.TabIndex = 6;
+            this.btnTwitter.TabStop = false;
             // 
-            // pictureBox3
+            // btnEmail
             // 
-            this.pictureBox3.Image = global::AppBudgetManager.Presentation.Properties.Resources.Gmail;
-            this.pictureBox3.Location = new System.Drawing.Point(91, 650);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.btnEmail.Image = global::AppBudgetManager.Presentation.Properties.Resources.Gmail;
+            this.btnEmail.Location = new System.Drawing.Point(91, 638);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(46, 46);
+            this.btnEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEmail.TabIndex = 5;
+            this.btnEmail.TabStop = false;
             // 
-            // pictureBox2
+            // btnGit
             // 
-            this.pictureBox2.Image = global::AppBudgetManager.Presentation.Properties.Resources.Git;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 650);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.btnGit.Image = global::AppBudgetManager.Presentation.Properties.Resources.Git;
+            this.btnGit.Location = new System.Drawing.Point(23, 638);
+            this.btnGit.Name = "btnGit";
+            this.btnGit.Size = new System.Drawing.Size(46, 46);
+            this.btnGit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGit.TabIndex = 4;
+            this.btnGit.TabStop = false;
+            // 
+            // lblAyuda
+            // 
+            this.lblAyuda.AutoSize = true;
+            this.lblAyuda.Location = new System.Drawing.Point(100, 700);
+            this.lblAyuda.Name = "lblAyuda";
+            this.lblAyuda.Size = new System.Drawing.Size(37, 13);
+            this.lblAyuda.TabIndex = 11;
+            this.lblAyuda.TabStop = true;
+            this.lblAyuda.Text = "Ayuda";
+            this.lblAyuda.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAyuda_LinkClicked);
             // 
             // GuiMain
             // 
@@ -134,37 +148,40 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1104, 732);
+            this.Controls.Add(this.lblAyuda);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCategories);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnTwitter);
+            this.Controls.Add(this.btnEmail);
+            this.Controls.Add(this.btnGit);
             this.Name = "GuiMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Budget manager";
             ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTwitter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGit)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox btnGit;
+        private System.Windows.Forms.PictureBox btnEmail;
+        private System.Windows.Forms.PictureBox btnTwitter;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.PictureBox btnCategories;
         private System.Windows.Forms.PictureBox btnReport;
+        private System.Windows.Forms.LinkLabel lblAyuda;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace AppBudGetManager.Domain
@@ -8,13 +9,14 @@ namespace AppBudGetManager.Domain
         private int fldOIdCategory = 0;
         private string fldName = " ";
         private string fldDescription = " ";
-        public ClsTransaction[] myTransactions;
+        public List<ClsTransaction>  myTransactions;
 
         public ClsCategory(int prmIdCategory, string prmName, string prmDescription)
         {
             fldOIdCategory = prmIdCategory;
             fldName = prmName;
             fldDescription = prmDescription;
+            myTransactions = new List<ClsTransaction>();
         }
 
         public int GetIdCategory()
@@ -30,6 +32,11 @@ namespace AppBudGetManager.Domain
         public string GetDescription()
         {
             return fldDescription;
+        }
+
+        public List<ClsTransaction> GetListTransactions()
+        {
+            return myTransactions;
         }
 
         public bool SetName(string prmValue)
@@ -58,6 +65,41 @@ namespace AppBudGetManager.Domain
                 Debug.WriteLine(ex.Message);
                 return false;
             }
+        }
+
+        public bool AddTransactions(ClsTransaction prmTransaction)
+        {
+            try
+            {
+                myTransactions.Add(prmTransaction);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool RemoveTransaction(int prmIdTransactions)
+        {
+            try
+            {
+                for (int i = 0; i < myTransactions.Count; i++)
+                {
+                    if (myTransactions[i].GetIdTransaction() == prmIdTransactions)
+                    {
+                        myTransactions.RemoveAt(i);
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+            
         }
 
         public bool Modify(string prmName, string prmDescription)

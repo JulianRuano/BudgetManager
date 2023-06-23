@@ -143,7 +143,7 @@ namespace appBudgetManager.Domain
             {
                 foreach (DataRow row in table.Rows)
                 {
-                    objSystem.fldMyBudGet.CreateTransaction(Convert.ToInt32(row["idTransaction"]), Convert.ToDouble(row["quantity"]), row["transactionDate"].ToString(), row["description"].ToString(), objSystem.CategoryExists(Convert.ToInt32(row["idCategory"])), row["type"].ToString());
+                    objSystem.GetClsBudGet().CreateTransaction(Convert.ToInt32(row["idTransaction"]), Convert.ToDouble(row["quantity"]), row["transactionDate"].ToString(), row["description"].ToString(), objSystem.CategoryExists(Convert.ToInt32(row["idCategory"])), row["type"].ToString());
                 }
             }
         }

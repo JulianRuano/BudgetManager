@@ -1,6 +1,6 @@
 ﻿namespace AppBudgetManager.Presentation
 {
-    partial class GuiAddCategory
+    partial class GuiCategory
     {
         /// <summary>
         /// Required designer variable.

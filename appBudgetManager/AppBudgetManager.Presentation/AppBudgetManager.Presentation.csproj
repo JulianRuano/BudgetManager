@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GuiAddCategory.cs">
+    <Compile Include="GuiCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GuiAddCategory.Designer.cs">
-      <DependentUpon>GuiAddCategory.cs</DependentUpon>
+    <Compile Include="GuiCategory.Designer.cs">
+      <DependentUpon>GuiCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="GuiAddTransaction.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GuiAddCategory.resx">
-      <DependentUpon>GuiAddCategory.cs</DependentUpon>
+    <EmbeddedResource Include="GuiCategory.resx">
+      <DependentUpon>GuiCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuiAddTransaction.resx">
       <DependentUpon>GuiAddTransaction.cs</DependentUpon>

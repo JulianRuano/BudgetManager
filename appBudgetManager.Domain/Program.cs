@@ -16,9 +16,9 @@ namespace AppBudGetManager.Domain
             clsSystem.CreateCategory(3, "Salary", "Salary incomes");
             clsSystem.CreateCategory(4, "Extra", "Extra incomes");
 
-            clsSystem.CreateTransaction(1, 1000, default, "Salary incomes", clsSystem.fldMyCategory[2], "Incomes");
-            clsSystem.CreateTransaction(2, 3000, default, "Extra incomes", clsSystem.fldMyCategory[3], "Incomes");
-            clsSystem.CreateTransaction(3, 2000, default, "Food expenses", clsSystem.fldMyCategory[0], "Expenses");
+            clsSystem.CreateTransaction(1, 1000, default, "Salary incomes", clsSystem.GetListCategories()[0], "Incomes");
+            clsSystem.CreateTransaction(2, 3000, default, "Extra incomes", clsSystem.GetListCategories()[0], "Incomes");
+            clsSystem.CreateTransaction(3, 2000, default, "Food expenses", clsSystem.GetListCategories()[1], "Expenses");
                     
             
             Console.WriteLine("Total Incomes: " + clsSystem.GetClsBudGet().GetTotalIncomes());

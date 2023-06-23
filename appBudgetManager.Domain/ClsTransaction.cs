@@ -7,7 +7,7 @@ namespace AppBudGetManager.Domain
     public class ClsTransaction
     {
         private int fldOIdTransaction;
-        private Double fldQuantity;
+        private double fldQuantity;
         private string fldDate;
         private string fldDescription;
         public ClsCategory fldMyCategory;

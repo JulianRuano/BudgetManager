@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppBudgetManager.Presentation
 {
-    public partial class GuiAddCategory : Form
+    public partial class GuiCategory : Form
     {
-        public GuiAddCategory()
+        public GuiCategory()
         {
             InitializeComponent();
         }

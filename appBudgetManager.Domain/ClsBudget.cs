@@ -82,6 +82,7 @@ namespace AppBudGetManager.Domain
         {
             ClsTransaction objTransaction = new ClsTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription);
             objTransaction.SetCategory(prmMyCategory);
+            prmMyCategory.AddTransactions(objTransaction);
 
             if (prmType == "Incomes")
             {
@@ -106,6 +107,8 @@ namespace AppBudGetManager.Domain
         public bool DeleteTransaction(int prmIdTransaction, string prmType)
         {
             ClsTransaction objTransaction = TransactionExists(prmIdTransaction, prmType);
+            objTransaction.GetCategory().RemoveTransaction(objTransaction.GetIdTransaction());
+
             if (objTransaction.Die())
             {
                 if (prmType == "Incomes")
@@ -158,8 +161,7 @@ namespace AppBudGetManager.Domain
 
         /// <summary>
         /// Property for collection of ClsTransaction
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
+        /// </summary>     
         public List<ClsTransaction> MyIncomes
         {
             get
@@ -182,7 +184,6 @@ namespace AppBudGetManager.Domain
         /// <summary>
         /// Add a new ClsTransaction in the collection
         /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddMyIncomes(ClsTransaction newClsTransaction)
         {
             if (newClsTransaction == null)
@@ -196,7 +197,6 @@ namespace AppBudGetManager.Domain
         /// <summary>
         /// Remove an existing ClsTransaction from the collection
         /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveMyIncomes(ClsTransaction oldClsTransaction)
         {
             if (oldClsTransaction == null)
@@ -209,7 +209,6 @@ namespace AppBudGetManager.Domain
         /// <summary>
         /// Remove all instances of ClsTransaction from the collection
         /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllMyIncomes()
         {
             fldMyIncomes?.Clear();
@@ -219,7 +218,6 @@ namespace AppBudGetManager.Domain
         /// <summary>
         /// Property for collection of ClsTransaction
         /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public List<ClsTransaction> MyExpenses
         {
             get
@@ -242,7 +240,6 @@ namespace AppBudGetManager.Domain
         /// <summary>
         /// Add a new ClsTransaction in the collection
         /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddMyExpenses(ClsTransaction newClsTransaction)
         {
             if (newClsTransaction == null)
@@ -256,7 +253,6 @@ namespace AppBudGetManager.Domain
         /// <summary>
         /// Remove an existing ClsTransaction from the collection
         /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveMyExpenses(ClsTransaction oldClsTransaction)
         {
             if (oldClsTransaction == null)
@@ -269,7 +265,6 @@ namespace AppBudGetManager.Domain
         /// <summary>
         /// Remove all instances of ClsTransaction from the collection
         /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllMyExpenses()
         {
             flbMyExpenses?.Clear();

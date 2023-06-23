@@ -9,16 +9,21 @@ namespace AppBudGetManager.Domain.System
 {
     public class ClsSystem
     {
-        public ClsBudGet fldMyBudGet;
-        public List<ClsCategory> fldMyCategory;
+        private ClsBudGet fldMyBudGet;
+        private List<ClsCategory> fldMyCategory;
         private static ClsSystem objSystem;
 
-        //Singleton
+        /// <summary>
+        /// Singleton constructor 
+        /// </summary>
         private ClsSystem()
         {
             fldMyCategory = new List<ClsCategory>();
             CreateBudGet();
         }
+        /// <summary>
+        /// Instance of the singleton
+        /// </summary>
         public static ClsSystem GetInstance()
         {
             if (objSystem == null)
@@ -34,6 +39,9 @@ namespace AppBudGetManager.Domain.System
 
 
         #region BudGet
+        /// <summary>
+        /// Create a new budGet 
+        /// </summary>
         public bool CreateBudGet()
         {
             try
@@ -56,8 +64,9 @@ namespace AppBudGetManager.Domain.System
             }
 
         }
-
+        /// <summary>
         /// Delete all system information reSet to default
+        /// </summary>
         public bool DeleteBudGet()
         {
             try
@@ -83,6 +92,9 @@ namespace AppBudGetManager.Domain.System
 
         #region Category
 
+        /// <summary>
+        ///  Create a new category and add to the list of categories
+        /// </summary>
         public bool CreateCategory(int prmIdCategory, string prmName, string prmDescription)
         {
             try {
@@ -97,13 +109,16 @@ namespace AppBudGetManager.Domain.System
         }
 
         /// <summary>
-        /// add a new category to the list  of categories 
+        ///  Update a category verify that the category exists first
         /// </summary>
         public bool UpdateCategory(int prmIdCategory, string prmName, string prmDescription)
         {
             return CategoryExists(prmIdCategory).Modify(prmName, prmDescription);
         }
 
+        /// <summary>
+        /// Delete a category verify that the category exists first
+        /// </summary>
         public bool DeleteCategory(int prmIdCategory)
         {
             ClsCategory objCategory = CategoryExists(prmIdCategory);
@@ -119,23 +134,33 @@ namespace AppBudGetManager.Domain.System
 
         #region Transaction
 
-        /// <param name="prmType">Transaction Type</param>
+        /// <summary>
+        /// Create a new transaction and add to the list of transactions
+        /// </summary>
         public bool CreateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
         {          
             return fldMyBudGet.CreateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
         }
 
+        /// <summary>
+        /// Update a transaction call the method in the budGet
+        /// </summary>
         public bool UpdateTransaction(int prmIdTransaction, double prmQuantity, string prmDate, string prmDescription, ClsCategory prmMyCategory, string prmType)
         {
             return fldMyBudGet.UpdateTransaction(prmIdTransaction, prmQuantity, prmDate, prmDescription, prmMyCategory, prmType);
         }
 
+        /// <summary>
+        /// Delete a transaction call the method in the budGet
+        /// </summary>
         public bool DeleteTransaction(int prmIdTransaction, string prmType)
         {
             return fldMyBudGet.DeleteTransaction( prmIdTransaction, prmType);
         }
 
-        ///verify that the category exists
+        /// <summary>
+        /// Check that the category exists and returns the category
+        /// </summary>
         public ClsCategory CategoryExists(int prmIdCategory)
         {
             foreach (ClsCategory objCategory in fldMyCategory)
@@ -150,6 +175,9 @@ namespace AppBudGetManager.Domain.System
 
         #endregion Transaction
 
+        /// <summary>
+        /// Check that the category exists and returns true or false
+        /// </summary>
         public bool CategoryExistsBool(int prmIdCategory)
         {
             foreach (ClsCategory objCategory in fldMyCategory)
@@ -160,14 +188,18 @@ namespace AppBudGetManager.Domain.System
                 }
             }
             return false;
-
         }
-
+        /// <summary>
+        /// Get the budGet
+        /// </summary>
         public ClsBudGet GetClsBudGet()
         {
             return fldMyBudGet;
         }
 
+        /// <summary>
+        /// Get the list of categories
+        /// </summary>
         public List<ClsCategory> GetListCategories()
         {
             return fldMyCategory;

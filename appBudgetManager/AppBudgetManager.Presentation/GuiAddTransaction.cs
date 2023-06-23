@@ -24,9 +24,9 @@ namespace AppBudgetManager.Presentation
             comBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxItems = new Dictionary<int, string>();
-            for (int i = 0; i < objSystemServices.GetSystem().fldMyCategory.Count; i++)
+            for (int i = 0; i < objSystemServices.GetSystem().GetListCategories().Count; i++)
             {
-                comboBoxItems.Add(objSystemServices.GetSystem().fldMyCategory[i].GetIdCategory(), objSystemServices.GetSystem().fldMyCategory[i].GetName());
+                comboBoxItems.Add(objSystemServices.GetSystem().GetListCategories()[i].GetIdCategory(), objSystemServices.GetSystem().GetListCategories()[i].GetName());
             }
             foreach (var item in comboBoxItems)
             {
